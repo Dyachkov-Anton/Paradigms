@@ -1,36 +1,32 @@
-﻿// Для сортировки небольших массивов
-// целесообразно использовать простые сортировки,
-// хотя рекомендуется избегать алгоритмов квадратичной сложности O(n^2).
-// При решении данной учебной задачи была использована сортировка пузырьком (bubble sort)
-// с применеием императивной, структурной и процедурной парадигм.
-// Сама сортировка для удобства использования обернута в класс.
-// Формально имеет место быть парадигма ООП.
-// Однако, последняя подразумевает не только использование классов,
-// но и приминение более сложных принципов
+﻿using System;
+using System.Text.RegularExpressions;
 
-using _02_Sort;
-
-Console.WriteLine("Сортировка пузырьком:\n".ToUpper());
-
-int[] arr1 = { -97, 5, -1, 5, 8, -23, 56, -44 };
-int[] arr2 = { -87, 7, -5, 5, 76, -43, 6, -4 };
-int[] arr3 = { -4, 6, 15, -5, 54, -25, 26, -64 };
-int[] arr4 = { 97, 3, -67, 55, 77, -21, 90, -80 };
-int[] arr5 = { 0, 7, -24, 3, 9, -10, 70, -10 };
-
-List<int[]> arrs = new List<int[]>();
-
-arrs.Add(arr1);
-arrs.Add(arr2);
-arrs.Add(arr3);
-arrs.Add(arr4);
-arrs.Add(arr5);
-
-Sort sort = new Sort();
-
-foreach (var arr in arrs)
+int InputNumber()
 {
-  Console.WriteLine($"Исходный массив: \t\t[ {string.Join(", ", arr)} ]");
-  sort.BubbleSort(arr);
-  Console.WriteLine($"Отсотрированный массив: \t[ {string.Join(", ", arr)} ]\n");
+  int number = 0;
+  string input = string.Empty;
+  Regex regex = new Regex("^[0-9]+$", RegexOptions.Compiled);
+
+  while (!regex.IsMatch(input))
+  {
+    Console.WriteLine("Введите любое целое число:\t");
+    input = Console.ReadLine();
+  }
+  number = int.Parse(input);
+  return number;
 }
+
+void MultiplicationTableOfOneColumn(int secondNumber, int firstNumber = 1)
+{
+  int result = 0;
+  for (int i = firstNumber; i <= secondNumber; i++)
+  {
+    result = firstNumber * i;
+    Console.WriteLine($"{firstNumber} * {i} = {result}");
+  }
+}
+
+
+
+int num = InputNumber();
+MultiplicationTableOfOneColumn(num);

@@ -1,0 +1,42 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+}
+.container{
+    max-width: 300px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.timer__time{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+}
+.timer__time>li>p{
+    color: rgb(46, 86, 206);
+    font-weight: bold;
+    font-size: 30px;
+}
+button{
+    border: 1px solid transparent;
+    background-color: #116bbe;
+    padding: 10px 0;
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.timer__time>li>span{
+    font-size: 25px;
+}
+.rounds>li{
+    color: rgb(46, 86, 206);
+    font-weight: bold;
+    font-size: 20px;
+}
